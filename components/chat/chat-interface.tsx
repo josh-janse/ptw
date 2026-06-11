@@ -38,7 +38,7 @@ const DEFAULT_SUGGESTED_QUESTIONS = [
 
 const GREETING = "Peace be with you.";
 const GREETING_DESCRIPTION =
-  "I'm here to help you practice the way of Jesus — unhurried, one step at a time.";
+  "I'm here to help you practice the way of Jesus - unhurried, one step at a time.";
 const INPUT_PLACEHOLDER = "Ask anything…";
 const DISCLAIMER = "AI can make mistakes. Please check responses.";
 const MAX_MESSAGE_LENGTH = 4000;
@@ -48,8 +48,8 @@ function toolKeyOf(partType: string): string | null {
   return partType.startsWith("tool-") ? partType.slice(5) : null;
 }
 
-// True while the assistant is "thinking" — request submitted or a tool call is
-// running — and no assistant text has begun streaming yet.
+// True while the assistant is "thinking" - request submitted or a tool call is
+// running - and no assistant text has begun streaming yet.
 function shouldShowTyping(
   messages: UIMessage[],
   status: "ready" | "streaming" | "submitted" | "error"
@@ -72,7 +72,7 @@ function shouldShowTyping(
 }
 
 // Renders a single non-text message part via the UI-tool registry. Banner tools
-// are skipped inline — they render above the input instead.
+// are skipped inline - they render above the input instead.
 function renderToolPart(part: ToolUIPart, sendMessage: SendMessage): ReactNode {
   const key = toolKeyOf(part.type);
   if (!key) {
@@ -128,7 +128,7 @@ function ChatMessage({
   isStreaming: boolean;
   sendMessage: SendMessage;
 }) {
-  // Only show the disclaimer once real text has streamed in — not during a
+  // Only show the disclaimer once real text has streamed in - not during a
   // tool call or an empty assistant turn before the first words appear.
   const hasStreamedText = message.parts.some(
     (p) => p.type === "text" && p.text.trim().length > 0
@@ -162,7 +162,7 @@ function ChatMessage({
   );
 }
 
-// Prompt composer — owns the draft text, reports submits.
+// Prompt composer - owns the draft text, reports submits.
 function ChatComposer({
   status,
   onSend,
@@ -204,7 +204,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string }) {
     transport: new DefaultChatTransport({ api: "/api/chat" }),
   });
 
-  // ?q= priming — auto-send the query as the first user message, exactly once.
+  // ?q= priming - auto-send the query as the first user message, exactly once.
   const sentInitial = useRef(false);
   useEffect(() => {
     if (initialQuery && !sentInitial.current) {
@@ -225,7 +225,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string }) {
 
   return (
     <div className="relative flex h-full flex-col bg-background">
-      {/* Top fade — taller on mobile. Inset right by the scrollbar gutter. */}
+      {/* Top fade - taller on mobile. Inset right by the scrollbar gutter. */}
       {hasMessages && (
         <div className="pointer-events-none absolute top-0 right-3 left-0 z-10 h-28 bg-gradient-to-b from-background to-transparent sm:h-20" />
       )}
@@ -263,7 +263,7 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string }) {
           ))}
 
           {/*
-           * Typing indicator — max-h-0 when inactive so the resize observer on
+           * Typing indicator - max-h-0 when inactive so the resize observer on
            * StickToBottom fires when it expands, triggering a scroll to bottom.
            * hidden before the first message to avoid ghost space.
            */}
@@ -289,12 +289,12 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string }) {
         <ConversationScrollButton className="bottom-44" />
       </Conversation>
 
-      {/* Bottom fade — sits behind the input overlay */}
+      {/* Bottom fade - sits behind the input overlay */}
       {hasMessages && (
         <div className="pointer-events-none absolute right-3 bottom-0 left-0 z-10 h-44 bg-gradient-to-t from-background to-transparent" />
       )}
 
-      {/* Input overlay — transparent so scrollbar and content show through */}
+      {/* Input overlay - transparent so scrollbar and content show through */}
       <div className="absolute right-0 bottom-0 left-0 z-20">
         <div className="mx-auto max-w-3xl space-y-3 px-3 pb-3">
           {bannerNode}

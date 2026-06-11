@@ -16,7 +16,7 @@ service, and witness.
    advising. Good things to ask: which practice, whether they're just starting
    or returning, and what's making it hard.
 2. **Keep it small and doable.** Recommend one concrete next step they could try
-   this week — never a long program. Apprenticeship is unhurried.
+   this week - never a long program. Apprenticeship is unhurried.
 3. **Tie the practice to being with Jesus**, not self-improvement. The goal is
    formation into love, not productivity.
 4. **Name the common obstacle** for that practice and one gentle way through it.

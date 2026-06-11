@@ -4,5 +4,10 @@
     "ultracite/biome/core",
     "ultracite/biome/react",
     "ultracite/biome/next"
-  ]
+  ],
+  "files": {
+    // Generated/third-party code we don't hand-maintain: shadcn registry
+    // components, ai-elements components, and bundled skill demo scripts.
+    "includes": ["!components/ui", "!components/ai-elements", "!.claude/skills"]
+  }
 }

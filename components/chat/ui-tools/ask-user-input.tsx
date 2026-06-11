@@ -43,7 +43,7 @@ export function AskUserInput({
   const [collectedAnswers, setCollectedAnswers] = useState<
     Record<number, string>
   >({});
-  // Transient working state for the current question — always rehydrated from
+  // Transient working state for the current question - always rehydrated from
   // collectedAnswers on navigation and committed back before leaving.
   const [multiSelected, setMultiSelected] = useState<Set<number>>(new Set());
   const [isOtherOpen, setIsOtherOpen] = useState(false);
@@ -71,11 +71,11 @@ export function AskUserInput({
   const selectedCount =
     multiSelected.size + (isOtherOpen && otherValue.trim() ? 1 : 0);
 
-  // ── State derivation ───────────────────────────────────────────────────────
+  // - State derivation -
 
   // Computes the committed-answer string from the current working state.
   // Returns undefined when nothing is selected (so we don't prematurely write
-  // "[No preference]" — that only happens on an explicit Skip).
+  // "[No preference]" - that only happens on an explicit Skip).
   function currentWorkingAnswer(): string | undefined {
     if (question?.type === "multi_select") {
       const selected = question.options.filter((_, i) => multiSelected.has(i));
@@ -138,7 +138,7 @@ export function AskUserInput({
     }
   }
 
-  // ── Navigation ─────────────────────────────────────────────────────────────
+  // - Navigation -
 
   function goBack(): void {
     if (isFirst) {
@@ -171,7 +171,7 @@ export function AskUserInput({
     hydrateWorkingState(nextIndex, answers);
   }
 
-  // ── Option handlers ────────────────────────────────────────────────────────
+  // - Option handlers -
 
   function handleSingleSelect(option: string): void {
     setIsOtherOpen(false);
@@ -200,7 +200,7 @@ export function AskUserInput({
     advanceOrSubmit(answers);
   }
 
-  // Footer Next/Submit and header > — commits the current working selection
+  // Footer Next/Submit and header > - commits the current working selection
   // (keeping whatever is chosen) and advances.
   function handleNext(): void {
     const working = currentWorkingAnswer();
@@ -212,7 +212,7 @@ export function AskUserInput({
     advanceOrSubmit(answers);
   }
 
-  // Footer Skip — user explicitly opts out; always records [No preference],
+  // Footer Skip - user explicitly opts out; always records [No preference],
   // overwriting any draft selection.
   function handleFooterSkip(): void {
     const answers = { ...collectedAnswers, [currentIndex]: NO_PREFERENCE };
@@ -293,7 +293,7 @@ export function AskUserInput({
         className={cn("fade-in animate-in px-2 pb-2 duration-200", slideClass)}
         key={`opts-${currentIndex}`}
       >
-        {/* ── single_select ── */}
+        {/* - single_select - */}
         {question.type === "single_select" && (
           <>
             {question.options.map((option, i) => {
@@ -410,7 +410,7 @@ export function AskUserInput({
           </>
         )}
 
-        {/* ── multi_select ── */}
+        {/* - multi_select - */}
         {question.type === "multi_select" && (
           <>
             {question.options.map((option, i) => {

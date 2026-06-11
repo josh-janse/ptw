@@ -33,7 +33,7 @@ function LinkCard({ link }: { link: LinkCardData }) {
     >
       {link.image && (
         <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-          {/* biome-ignore lint/performance/noImgElement: link preview images come from arbitrary external domains — next/image remotePatterns can't enumerate them all */}
+          {/* biome-ignore lint/performance/noImgElement: link preview images come from arbitrary external domains - next/image remotePatterns can't enumerate them all */}
           {/* biome-ignore lint/correctness/useImageSize: fills its aspect-ratio container via CSS; intrinsic size is unknown for arbitrary preview images */}
           <img
             alt=""

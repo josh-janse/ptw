@@ -4,16 +4,16 @@ import { join } from "node:path";
 // Skills are plain markdown files in /skills, each with YAML-ish frontmatter:
 //
 //   ---
-//   name: practice-guide          # the slug (kebab-case, 1–64 chars)
+//   name: practice-guide          # the slug (kebab-case, 1-64 chars)
 //   description: One line the model reads to decide when the skill applies.
 //   ---
 //   <full instructions in the body>
 //
-// To add a skill, drop a new `.md` file in /skills — no DB, no rebuild config.
+// To add a skill, drop a new `.md` file in /skills - no DB, no rebuild config.
 // The agent sees only each skill's name + description up front, then calls the
 // `loadSkill` tool to pull a skill's full body on demand.
 
-// A skill with its instruction body resolved — used by the agent runtime.
+// A skill with its instruction body resolved - used by the agent runtime.
 export interface ResolvedSkill {
   content: string;
   description: string;

@@ -3,7 +3,7 @@ import { buildChatTools } from "@/lib/chat-tools";
 import { loadSkills } from "@/lib/skills";
 import { buildSystemPrompt } from "@/lib/system-prompt";
 
-// The default model — Claude Sonnet (latest), addressed as a plain
+// The default model - Claude Sonnet (latest), addressed as a plain
 // "provider/model" string resolved through the Vercel AI Gateway. Change the id
 // here to swap models. Requires AI_GATEWAY_API_KEY (or Vercel OIDC) in the env.
 export const DEFAULT_MODEL = "anthropic/claude-sonnet-4.6";

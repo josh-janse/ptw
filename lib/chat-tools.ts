@@ -2,10 +2,10 @@ import { type ToolSet, tool } from "ai";
 import { z } from "zod";
 import type { ResolvedSkill } from "@/lib/skills";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Tool input schemas — shared by the server tool factory and the client
+// ---------------------------------------------------------------------------
+// Tool input schemas - shared by the server tool factory and the client
 // renderers so the UI and the model agree on shape.
-// ─────────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 export const askUserSchema = z.object({
   questions: z
@@ -57,11 +57,11 @@ export const showLinksSchema = z.object({
 export type ShowLinksInput = z.infer<typeof showLinksSchema>;
 export type LinkCardData = ShowLinksInput["links"][number];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Tool factory. ask_user and show_links are "echo" tools — they produce no
+// ---------------------------------------------------------------------------
+// Tool factory. ask_user and show_links are "echo" tools - they produce no
 // server-side effect; their input is echoed back so the client can render an
 // interactive surface. loadSkill returns a skill's full instruction body.
-// ─────────────────────────────────────────────────────────────────────────────
+// ---------------------------------------------------------------------------
 
 export function buildChatTools(skills: ResolvedSkill[]): ToolSet {
   const contentBySlug = new Map(
@@ -73,7 +73,7 @@ export function buildChatTools(skills: ResolvedSkill[]): ToolSet {
       description:
         "Ask the person one or more multiple-choice questions to clarify their needs before answering. " +
         "Use this when the request is ambiguous or you need to narrow down options. " +
-        "After calling this tool, do not write any further text — stop and wait for the answer, which arrives as their next message.",
+        "After calling this tool, do not write any further text - stop and wait for the answer, which arrives as their next message.",
       inputSchema: askUserSchema,
       execute: (input) => Promise.resolve(input),
     }),
