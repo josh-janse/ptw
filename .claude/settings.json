@@ -1,14 +1,22 @@
 {
+  "permissions": {
+    "allow": [
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/lorito/**)",
+      "Read(//Users/joshuajansevanrensburg/.claude/plugins/cache/claude-plugins-official/vercel/0.43.0/skills/ai-sdk/references/**)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {
+        "matcher": "Write|Edit",
         "hooks": [
           {
-            "command": "npm run fix -- --skip=correctness/noUnusedImports",
-            "type": "command"
+            "type": "command",
+            "command": "npm run fix -- --skip=correctness/noUnusedImports"
           }
-        ],
-        "matcher": "Write|Edit"
+        ]
       }
     ]
   }
