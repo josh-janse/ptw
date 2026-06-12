@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ChatInterface } from "@/components/chat/chat-interface";
 
 export const metadata: Metadata = {
-  title: "Chat · Practicing the Way",
-  description: "A companion for apprenticeship to Jesus.",
+  title: "Conversation · Practicing the Way",
+  description: "A calm place to prepare to lead.",
 };
 
 const MAX_QUERY_LENGTH = 2000;
@@ -24,7 +24,7 @@ function sanitizeQuery(
   return cleaned || undefined;
 }
 
-export default async function ChatPage({
+export default async function ConversationPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

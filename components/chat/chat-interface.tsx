@@ -40,7 +40,7 @@ const GREETING = "A calm place to begin.";
 const GREETING_DESCRIPTION =
   "You're preparing to lead your group through the Course. Start wherever is most useful, one step at a time.";
 const INPUT_PLACEHOLDER = "Type what's on your mind…";
-const DISCLAIMER = "Responses can be imperfect. Please use your judgment.";
+const DISCLAIMER = "AI can make mistakes. Please check responses.";
 const MAX_MESSAGE_LENGTH = 4000;
 
 // Resolves a tool UI part to its registered renderer key (tool-ask_user → ask_user).

@@ -11,17 +11,27 @@ import {
 import type { LinkCardData } from "@/lib/chat-tools";
 
 const WWW_PREFIX_RE = /^www\./;
+const QUERY_OR_HASH_RE = /[?#]/;
+const MAX_LABEL_LENGTH = 38;
 
-function domainOf(url: string): string {
+// A short, human-readable source label. Absolute URLs show their domain;
+// relative paths (e.g. a hosted file) show the file name. Anything longer than
+// the cap is truncated with an ellipsis so a long URL never overflows the card.
+function sourceLabel(url: string): string {
+  let label: string;
   try {
-    return new URL(url).hostname.replace(WWW_PREFIX_RE, "");
+    label = new URL(url).hostname.replace(WWW_PREFIX_RE, "");
   } catch {
-    return url;
+    const path = url.split(QUERY_OR_HASH_RE)[0] ?? url;
+    label = path.split("/").filter(Boolean).at(-1) ?? url;
   }
+  return label.length > MAX_LABEL_LENGTH
+    ? `${label.slice(0, MAX_LABEL_LENGTH - 1)}…`
+    : label;
 }
 
 function LinkCard({ link }: { link: LinkCardData }) {
-  const domain = domainOf(link.url);
+  const domain = sourceLabel(link.url);
   const title = link.title ?? domain;
 
   return (
@@ -44,7 +54,9 @@ function LinkCard({ link }: { link: LinkCardData }) {
         </div>
       )}
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="text-muted-foreground text-xs">{domain}</span>
+        <span className="block truncate text-muted-foreground text-xs">
+          {domain}
+        </span>
         <h4 className="line-clamp-2 font-semibold text-sm leading-snug">
           {title}
         </h4>
