@@ -142,24 +142,36 @@ export default function Menu() {
       </div>
 
       <footer
-        className="ptw-rise mt-auto flex items-center gap-5 pt-20 text-sm"
+        className="ptw-rise mt-auto flex flex-col gap-4 pt-20 text-sm"
         style={{ animationDelay: "460ms" }}
       >
-        <Link
-          className="text-muted-foreground transition-colors hover:text-foreground"
-          href="/brand"
-        >
-          Branding
-        </Link>
-        <span aria-hidden="true" className="text-border">
-          ·
-        </span>
-        <Link
-          className="text-muted-foreground transition-colors hover:text-foreground"
-          href="/brainstorm"
-        >
-          Brainstorming
-        </Link>
+        <div className="flex items-center gap-5">
+          <Link
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            href="/brand"
+          >
+            Branding
+          </Link>
+          <span aria-hidden="true" className="text-border">
+            ·
+          </span>
+          <Link
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            href="/brainstorm"
+          >
+            Brainstorming
+          </Link>
+        </div>
+        <p className="text-muted-foreground text-xs leading-relaxed">
+          Prepared by Joshua Janse van Rensburg in collaboration with Claude.
+          <br />
+          <Link
+            className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground"
+            href="/ai-approach"
+          >
+            On the place of AI
+          </Link>
+        </p>
       </footer>
     </main>
   );
