@@ -2,6 +2,8 @@
 
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type ToolUIPart, type UIMessage } from "ai";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   Conversation,
@@ -229,6 +231,15 @@ export function ChatInterface({ initialQuery }: { initialQuery?: string }) {
       {hasMessages && (
         <div className="pointer-events-none absolute top-0 right-3 left-0 z-10 h-28 bg-gradient-to-b from-background to-transparent sm:h-20" />
       )}
+
+      {/* Way back to the menu - floats above the fade so it never gets buried. */}
+      <Link
+        className="absolute top-4 left-4 z-30 inline-flex items-center gap-1.5 text-muted-foreground text-sm transition-colors hover:text-foreground"
+        href="/menu"
+      >
+        <ArrowLeft className="size-4" />
+        Menu
+      </Link>
 
       <Conversation className="flex-1 [scrollbar-gutter:stable]">
         {!hasMessages && (

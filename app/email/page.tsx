@@ -1,3 +1,4 @@
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { emailTemplates } from "@/emails/registry";
 
@@ -10,7 +11,14 @@ export default function EmailIndexPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-3xl p-8">
-        <h1 className="font-semibold text-2xl text-foreground tracking-tight">
+        <Link
+          className="inline-flex items-center gap-1.5 text-muted-foreground text-sm transition-colors hover:text-foreground"
+          href="/menu"
+        >
+          <ArrowLeft className="size-4" />
+          Menu
+        </Link>
+        <h1 className="mt-8 font-semibold text-2xl text-foreground tracking-tight">
           Email templates
         </h1>
         <p className="mt-2 text-muted-foreground">
