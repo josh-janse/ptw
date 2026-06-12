@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 // The 1920x960 canvas centers the lockup with empty bands on every side. Trim
@@ -18,6 +18,9 @@ const PLAYBACK_SPEED = 1;
 // override live in the `lottie-logo` rules in globals.css.
 export function AnimatedLogo({ className }: { className?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  // Hold the mark hidden until lottie has painted the SVG, then fade it in so
+  // it never snaps into the corner once the chunk and JSON resolve.
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -26,21 +29,35 @@ export function AnimatedLogo({ className }: { className?: string }) {
     }
 
     let animation: {
+      addEventListener: (event: string, handler: () => void) => void;
       destroy: () => void;
+      goToAndStop: (value: number, isFrame: boolean) => void;
       setSpeed: (n: number) => void;
     } | null = null;
+
+    // Honor reduced-motion: show a still frame instead of the orbiting loop.
+    const stillOnly = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     // lottie-web touches `document`, so load it only in the browser.
     import("lottie-web").then(({ default: lottie }) => {
       animation = lottie.loadAnimation({
         container,
         renderer: "svg",
-        loop: true,
-        autoplay: true,
+        loop: !stillOnly,
+        autoplay: !stillOnly,
         path: "/animated-logo.json",
         rendererSettings: { viewBoxSize: LOCKUP_VIEW_BOX },
       });
-      animation.setSpeed(PLAYBACK_SPEED);
+      animation.addEventListener("DOMLoaded", () => {
+        if (stillOnly) {
+          animation?.goToAndStop(0, true);
+        } else {
+          animation?.setSpeed(PLAYBACK_SPEED);
+        }
+        setReady(true);
+      });
     });
 
     return () => animation?.destroy();
@@ -49,7 +66,11 @@ export function AnimatedLogo({ className }: { className?: string }) {
   return (
     <div
       aria-label="Practicing the Way"
-      className={cn("lottie-logo aspect-[1670/540]", className)}
+      className={cn(
+        "lottie-logo aspect-[1670/540] transition-opacity duration-500",
+        ready ? "opacity-100" : "opacity-0",
+        className
+      )}
       ref={containerRef}
       role="img"
     />
