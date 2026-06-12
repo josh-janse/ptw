@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface FadeLinkProps {
   children: React.ReactNode;
@@ -73,18 +74,24 @@ export function FadeLink({ href, fadeTo, className, children }: FadeLinkProps) {
       <Link className={className} href={href} onClick={handleClick}>
         {children}
       </Link>
-      {leaving && (
-        <div
-          aria-hidden="true"
-          className="fixed inset-0 z-[60] transition-opacity ease-out"
-          onTransitionEnd={finish}
-          style={{
-            background: fadeTo,
-            opacity: visible ? 1 : 0,
-            transitionDuration: `${FADE_MS}ms`,
-          }}
-        />
-      )}
+      {/* Portal to <body> so the curtain fills the viewport. Rendered inline it
+          would be trapped as a box by the nearest animated (transformed)
+          ancestor's containing block. */}
+      {leaving &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            aria-hidden="true"
+            className="fixed inset-0 z-[60] transition-opacity ease-out"
+            onTransitionEnd={finish}
+            style={{
+              background: fadeTo,
+              opacity: visible ? 1 : 0,
+              transitionDuration: `${FADE_MS}ms`,
+            }}
+          />,
+          document.body
+        )}
     </>
   );
 }
