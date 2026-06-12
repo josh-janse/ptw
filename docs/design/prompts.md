@@ -15,12 +15,13 @@ in `app/globals.css`. NEVER use em dashes (see `CLAUDE.md`). Finish with
 |---|---|---|
 | Agent: system prompt + skills | A (kicked off) | done |
 | Shell: home, menu, pause, thinking MDX | B (kicked off) | done |
-| `/chat` to `/conversation` + tuning | 1 below | todo |
-| `/brainstorm` reveal page | 2 below | todo |
+| `/chat` to `/conversation` + tuning | 1 below | done |
+| `/brainstorm` reveal page | 2 below | done |
 | Email tuning + Week 1 email | 3 below | todo |
 | `/timeline` | 4 below | todo |
 | `/in-app` invitation system | 5 below | todo |
-| AI-approach page + colophon | 6 below | todo |
+| AI-approach page + colophon | 6 below | done |
+| Full copy review (run last) | 7 below | todo |
 
 What already exists to build on: `app/page.tsx` (home), `app/menu/page.tsx`,
 `app/thinking/sections.ts`, `components/pause.tsx`, `content/thinking/*.mdx`,
@@ -116,8 +117,37 @@ Read docs/design/00-delivery.md ("Planned: an AI approach page") and 04 (the ant
 Tasks:
 1. Add content/thinking-adjacent MDX (e.g. content/ai-approach.mdx) and a route to view it (e.g. /ai-approach, or fold it under the Rationale thinking layer). Keep it short and clear: AI here is an agentic tool named by action, never personified; bounded in scope; anti-dependency by design (points outward to people); used to get closer to the real need, not to replace formation or human relationship. Note what was deliberately left out (vector DB / knowledge grounding) and why.
 2. Reference it from somewhere sensible: a small link from the Rationale section or the menu.
-3. Add a small, unobtrusive colophon in the menu footer (alongside Branding and Brainstorming): "Prepared by Joshua Janse van Rensburg in collaboration with Claude (Anthropic)." The fuller, honest version of this lives on the AI-approach page: state plainly that AI helped prepare the submission, which is consistent with the stance the page argues for.
+3. Add a small, unobtrusive colophon in the menu footer (alongside Branding and Brainstorming): "Prepared by Joshua Janse van Rensburg in collaboration with Claude." The fuller, honest version of this lives on the AI-approach page: state plainly that AI helped prepare the submission, which is consistent with the stance the page argues for.
 
 Constraints: calm, honest, first-person where natural, no em dashes, invitation-not-notification.
 Done when: the AI-approach page renders and is linked; the menu colophon is present; ultracite check passes.
+```
+
+---
+
+## Prompt 7: full copy review (run last, after email/timeline/in-app land)
+
+```
+Read docs/design/03 (voice filter, two hierarchies, the skeleton, the governing line, the canonical examples) and 01, 02, 04. Do a full copy review across every user-visible string in the app. This is a quality pass, not new features.
+
+Apply the voice filter from docs/design/03 to every surface:
+- Calm, warm, invitational, not directive. Plain sentences with quiet depth. First-person plural ("we"). Sentence case.
+- Normalize not-knowing; leave room to champion (some moments should celebrate the leader, not only reassure).
+- No hype, no urgency, no guilt, no jargon. One ask per moment. Name the action, never the AI (no "assistant/bot/chat/companion/guide").
+- The governing line: "communication should promote calm, quiet confidence, even when not everything is known and not everything is done."
+- NEVER an em dash (grep for them and fix any that slipped in).
+
+Surfaces to review (read each, propose edits, then apply once approved):
+- app/page.tsx (home greeting + CTA; confirm the "Pathways team" vs "Practicing the Way team" call with Joshua)
+- app/menu/page.tsx (headings, item labels, footer links, colophon)
+- content/thinking/*.mdx (the four presentational sections) and the four pause key-thoughts in app/thinking/sections.ts
+- the conversation surface: empty-state copy + suggestions in components/chat/*, and metadata in app/conversation/*
+- lib/system-prompt.ts and skills/*.md (the agent's voice; same rules apply, still no persona)
+- emails/* (subjects, preview text, body, signoff)
+- app/brainstorm/* blurbs, app/ai-approach + content/ai-approach.mdx, and /timeline + /in-app once built
+- content/thinking and the canonical examples in docs/design/03 (give the "coloring" the second pass it was flagged for)
+
+Also check term consistency across all surfaces: Practicing the Way, the Course, session one, the Companion Guide, leader training, coordinator/pastor, "the conversation."
+
+Done when: every surface reads as one voice, no em dashes remain (verified by grep), terms are consistent, and ultracite check passes. Output a short summary of what changed per file.
 ```
