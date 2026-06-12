@@ -7,7 +7,13 @@
   ],
   "files": {
     // Generated/third-party code we don't hand-maintain: shadcn registry
-    // components, ai-elements components, and bundled skill demo scripts.
-    "includes": ["!components/ui", "!components/ai-elements", "!.claude/skills"]
+    // components, ai-elements components, bundled skill demo scripts, and the
+    // minified brand Lottie asset (formatting it bloats it ~3x with whitespace).
+    "includes": [
+      "!components/ui",
+      "!components/ai-elements",
+      "!.claude/skills",
+      "!public/animated-logo.json"
+    ]
   }
 }

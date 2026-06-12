@@ -193,3 +193,22 @@
     animation: none;
   }
 }
+
+/* The brand Lottie is authored in warm off-white for a dark backdrop, so every
+   shape vanishes on the light hero. Recolor through CSS (theme-aware) instead
+   of baking it into the JSON. The rotation mixes filled AND stroked shapes, so
+   both have to be forced to the foreground color or the stroked ones disappear.
+   :not([…="none"]) avoids filling outline-only shapes into solid blobs. */
+.lottie-logo svg [fill]:not([fill="none"]) {
+  fill: var(--color-foreground) !important;
+}
+
+.lottie-logo svg [stroke]:not([stroke="none"]) {
+  stroke: var(--color-foreground) !important;
+}
+
+/* The live-text wordmark inherits the site font. */
+.lottie-logo svg text {
+  font-family: var(--font-sans), system-ui, sans-serif !important;
+  font-weight: 700 !important;
+}
