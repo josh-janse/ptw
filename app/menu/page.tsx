@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { thinkingSections } from "@/app/thinking/sections";
+import { FadeLink } from "@/components/fade-link";
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
 
 interface MenuItem {
   description: string;
+  // When set, the screen fades to this background before navigating, matching
+  // the destination pause. Used for the thinking layers, which open on a pause.
+  fadeTo?: string;
   group: "thinking" | "prototype";
   href: string;
   label: string;
@@ -24,6 +28,7 @@ const menuItems: MenuItem[] = [
       description: section.blurb,
       href: `/thinking/${section.slug}`,
       group: "thinking",
+      fadeTo: section.pause.background,
     })
   ),
   {
@@ -61,25 +66,41 @@ const groups = [
   },
 ];
 
+const itemClassName =
+  "group flex items-baseline justify-between gap-4 border-border border-b py-5 transition-colors hover:border-primary/40";
+
+function MenuItemBody({ item }: { item: MenuItem }) {
+  return (
+    <span className="min-w-0">
+      <span className="flex items-center gap-2 font-normal text-foreground text-xl leading-snug">
+        {item.label}
+        <ArrowUpRight className="size-4 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:text-primary group-hover:opacity-100" />
+      </span>
+      <span className="mt-1 block text-base text-muted-foreground leading-relaxed">
+        {item.description}
+      </span>
+    </span>
+  );
+}
+
 function MenuList({ items }: { items: MenuItem[] }) {
   return (
     <ul className="mt-5 flex flex-col">
       {items.map((item) => (
         <li key={item.href}>
-          <Link
-            className="group flex items-baseline justify-between gap-4 border-border border-b py-5 transition-colors hover:border-primary/40"
-            href={item.href}
-          >
-            <span className="min-w-0">
-              <span className="flex items-center gap-2 font-normal text-foreground text-xl leading-snug">
-                {item.label}
-                <ArrowUpRight className="size-4 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:text-primary group-hover:opacity-100" />
-              </span>
-              <span className="mt-1 block text-base text-muted-foreground leading-relaxed">
-                {item.description}
-              </span>
-            </span>
-          </Link>
+          {item.fadeTo ? (
+            <FadeLink
+              className={itemClassName}
+              fadeTo={item.fadeTo}
+              href={item.href}
+            >
+              <MenuItemBody item={item} />
+            </FadeLink>
+          ) : (
+            <Link className={itemClassName} href={item.href}>
+              <MenuItemBody item={item} />
+            </Link>
+          )}
         </li>
       ))}
     </ul>

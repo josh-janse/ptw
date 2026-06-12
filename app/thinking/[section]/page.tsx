@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FadeLink } from "@/components/fade-link";
 import { Pause } from "@/components/pause";
 import { getThinkingSection, thinkingSections } from "../sections";
 
@@ -63,8 +64,9 @@ export default async function ThinkingSectionPage({
 
         <footer className="mt-20 border-border border-t pt-8">
           {next ? (
-            <Link
+            <FadeLink
               className="group flex items-center justify-between gap-4"
+              fadeTo={next.pause.background}
               href={`/thinking/${next.slug}`}
             >
               <span>
@@ -76,7 +78,7 @@ export default async function ThinkingSectionPage({
                 </span>
               </span>
               <ArrowRight className="size-5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
-            </Link>
+            </FadeLink>
           ) : (
             <Link
               className="group flex items-center justify-between gap-4"
