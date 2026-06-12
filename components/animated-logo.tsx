@@ -1,5 +1,6 @@
 "use client";
 
+import type { AnimationItem } from "lottie-web";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -28,12 +29,7 @@ export function AnimatedLogo({ className }: { className?: string }) {
       return;
     }
 
-    let animation: {
-      addEventListener: (event: string, handler: () => void) => void;
-      destroy: () => void;
-      goToAndStop: (value: number, isFrame: boolean) => void;
-      setSpeed: (n: number) => void;
-    } | null = null;
+    let animation: AnimationItem | null = null;
 
     // Honor reduced-motion: show a still frame instead of the orbiting loop.
     const stillOnly = window.matchMedia(
