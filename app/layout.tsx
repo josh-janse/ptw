@@ -16,7 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Practicing the Way",
+  title: {
+    default: "Practicing the Way",
+    template: "%s · Practicing the Way",
+  },
   description: "A pathway for apprenticeship to Jesus.",
 };
 
