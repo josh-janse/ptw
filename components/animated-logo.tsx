@@ -11,7 +11,7 @@ const LOCKUP_VIEW_BOX = "250 205 1670 540";
 
 // The full brand loop turns once per 100s, which reads as nearly frozen at
 // logo size; speeding it up makes the rotation legible.
-const PLAYBACK_SPEED = 2.5;
+const PLAYBACK_SPEED = 1;
 
 // The Practicing the Way lockup (orbiting circles + wordmark) from the brand
 // Lottie. The wordmark renders as live Plus Jakarta; recoloring and the font
