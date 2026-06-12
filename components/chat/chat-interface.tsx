@@ -31,16 +31,16 @@ import { cn } from "@/lib/utils";
 type SendMessage = UiToolRenderContext["sendMessage"];
 
 const DEFAULT_SUGGESTED_QUESTIONS = [
-  "Help me start practicing Sabbath",
-  "Walk me through a passage of Scripture",
-  "Help me build a Rule of Life",
+  "Help me get ready for my first session",
+  "Help me find the words to invite my group",
+  "Walk me through how the Course works",
 ];
 
-const GREETING = "Peace be with you.";
+const GREETING = "A calm place to begin.";
 const GREETING_DESCRIPTION =
-  "I'm here to help you practice the way of Jesus - unhurried, one step at a time.";
-const INPUT_PLACEHOLDER = "Ask anything…";
-const DISCLAIMER = "AI can make mistakes. Please check responses.";
+  "You're preparing to lead your group through the Course. Start wherever is most useful, one step at a time.";
+const INPUT_PLACEHOLDER = "Type what's on your mind…";
+const DISCLAIMER = "Responses can be imperfect. Please use your judgment.";
 const MAX_MESSAGE_LENGTH = 4000;
 
 // Resolves a tool UI part to its registered renderer key (tool-ask_user → ask_user).
