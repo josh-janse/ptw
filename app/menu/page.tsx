@@ -19,8 +19,7 @@ interface MenuItem {
 }
 
 // One array for easy editing. The thinking layers are derived from the section
-// config so titles stay in sync; the prototypes are listed alongside them.
-// Some prototype routes 404 until their own session lands, which is expected.
+// config so titles stay in sync; the two prototypes are listed alongside them.
 const menuItems: MenuItem[] = [
   ...thinkingSections.map(
     (section): MenuItem => ({
@@ -40,19 +39,7 @@ const menuItems: MenuItem[] = [
   {
     label: "The email",
     description: "A letter, not a campaign. One step, one quiet link onward.",
-    href: "/email",
-    group: "prototype",
-  },
-  {
-    label: "The timeline",
-    description: "The three-week heartbeat of touchpoints, no countdown.",
-    href: "/timeline",
-    group: "prototype",
-  },
-  {
-    label: "The in-app surfaces",
-    description: "One principle, three intensities. Invitation, never alarm.",
-    href: "/in-app",
+    href: "/email/first-step",
     group: "prototype",
   },
 ];
@@ -66,7 +53,7 @@ const groups = [
   {
     id: "prototype" as const,
     eyebrow: "The prototypes",
-    heading: "Four pieces to experience",
+    heading: "Two pieces to experience",
   },
 ];
 

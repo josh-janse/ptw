@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { FirstStepEmail } from "./first-step-email";
 import { ReflectionPrompt } from "./reflection-prompt";
 import { WelcomeEmail } from "./welcome-email";
 
@@ -15,6 +16,20 @@ export interface EmailTemplate {
 }
 
 export const emailTemplates: EmailTemplate[] = [
+  {
+    id: "first-step",
+    name: "First step (Week 1)",
+    description:
+      "The first touchpoint. One step, and a quiet way into the conversation.",
+    subject: "A calm place to begin",
+    render: () => (
+      <FirstStepEmail
+        conversationUrl="/conversation?q=I%27d%20like%20to%20talk%20through%20getting%20ready%20for%20my%20first%20session"
+        firstName="Sarah"
+        sessionUrl="https://launch.practicingtheway.org/training"
+      />
+    ),
+  },
   {
     id: "welcome",
     name: "Welcome",

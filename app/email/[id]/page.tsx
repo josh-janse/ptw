@@ -47,9 +47,9 @@ export default async function EmailPreviewPage({ params }: { params: Params }) {
           size="sm"
           variant="ghost"
         >
-          <Link href="/email">
+          <Link href="/menu">
             <ArrowLeft />
-            Back
+            Menu
           </Link>
         </Button>
         <span className="text-muted-foreground text-xs">{template.name}</span>
