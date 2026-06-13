@@ -194,6 +194,75 @@
   }
 }
 
+/* The post-launch confidence reflection. A warm, qualitative slider: salmon
+   fill, soft track, generous thumb. It carries a feeling, never a number, so
+   nothing numeric is rendered on it. --ptw-fill is set inline from the value. */
+.ptw-slider {
+  width: 100%;
+  height: 1.25rem;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.ptw-slider:focus-visible {
+  outline: none;
+}
+
+.ptw-slider::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background: linear-gradient(
+    to right,
+    var(--primary) var(--ptw-fill, 50%),
+    var(--muted) var(--ptw-fill, 50%)
+  );
+  border-radius: 9999px;
+}
+
+.ptw-slider::-moz-range-track {
+  height: 0.5rem;
+  background: var(--muted);
+  border-radius: 9999px;
+}
+
+.ptw-slider::-moz-range-progress {
+  height: 0.5rem;
+  background: var(--primary);
+  border-radius: 9999px;
+}
+
+.ptw-slider::-webkit-slider-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.375rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px -2px #00000033;
+  transition: transform 0.15s ease;
+}
+
+.ptw-slider::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px -2px #00000033;
+}
+
+.ptw-slider:active::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+
+.ptw-slider:focus-visible::-webkit-slider-thumb,
+.ptw-slider:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary), transparent 70%);
+}
+
 /* The brand Lottie is authored in warm off-white for a dark backdrop, so every
    shape vanishes on the light hero. Recolor through CSS (theme-aware) instead
    of baking it into the JSON. The rotation mixes filled AND stroked shapes, so
