@@ -33,7 +33,7 @@ export function ChatEmptyState({
       <div className="fade-in slide-in-from-bottom-1 flex animate-in flex-col gap-2 fill-mode-both px-4 pb-3 delay-75 duration-200">
         {suggestedQuestions.map((question) => (
           <Button
-            className="h-auto justify-start whitespace-normal rounded-[var(--radius)] border bg-card px-4 py-3 text-left text-sm hover:bg-muted hover:text-foreground"
+            className="h-auto justify-start whitespace-normal rounded-[var(--radius)] border bg-card px-4 py-3 text-left text-base hover:bg-muted hover:text-foreground"
             key={question}
             onClick={() => onSend(question)}
             variant="ghost"

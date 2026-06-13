@@ -20,14 +20,15 @@ export const askUserSchema = z.object({
         options: z
           .array(z.string())
           .min(2)
+          .max(3)
           .describe(
-            "The selectable answers. They can always add their own via an 'Other' field."
+            "Two or three selectable answers. They can always add their own via an 'Other' field."
           ),
       })
     )
     .min(1)
-    .max(5)
-    .describe("One to five multiple-choice questions."),
+    .max(3)
+    .describe("One to three multiple-choice questions."),
 });
 
 export type AskUserInput = z.infer<typeof askUserSchema>;

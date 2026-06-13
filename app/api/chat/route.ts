@@ -15,6 +15,6 @@ export async function POST(req: Request) {
     uiMessages: messages,
     // Release text word-by-word on a gentle timer so the stream reads calmly
     // rather than arriving in bursty model chunks.
-    experimental_transform: smoothStream({ delayInMs: 20, chunking: "word" }),
+    experimental_transform: smoothStream({ delayInMs: 40, chunking: "word" }),
   });
 }

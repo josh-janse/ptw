@@ -146,6 +146,7 @@ function ChatMessage({
             if (part.type === "text") {
               return (
                 <MessageResponse
+                  className="text-base"
                   isAnimating={isStreaming && isLastMessage}
                   key={`text-${partIndex}`}
                 >
@@ -158,7 +159,7 @@ function ChatMessage({
         </MessageContent>
       </Message>
       {showDisclaimer && (
-        <p className="text-[11px] text-muted-foreground/70">{DISCLAIMER}</p>
+        <p className="text-muted-foreground/70 text-xs">{DISCLAIMER}</p>
       )}
     </div>
   );
