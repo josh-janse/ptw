@@ -49,7 +49,7 @@ function InlineInvitationCard() {
           Watch session one of leader training
         </h3>
         <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
-          About twenty minutes. One finishable thing, and the steadiest place to
+          About six minutes. One finishable thing, and the steadiest place to
           begin.
         </p>
         <div className="mt-5 flex flex-wrap items-center gap-4">

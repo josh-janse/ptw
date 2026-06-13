@@ -73,7 +73,7 @@ with the tool greeting or introducing itself.
 > You've said yes to leading your group through the Practicing the Way Course. That is a
 > meaningful, generous thing, and you don't need to have it all figured out to begin well.
 > There's just one thing worth doing first. Not inviting anyone yet, not planning
-> sessions. Just watching **session one** of the leader training, about twenty minutes,
+> sessions. Just watching **session one** of the leader training, about six minutes,
 > so the shape of what's ahead feels familiar.
 > **[ Begin session one ]**
 > Not sure where your head's at? *Talk it through*
@@ -99,7 +99,7 @@ with the tool greeting or introducing itself.
 
 **⑤ The "no movement" nudge, kind, not guilty**
 > No rush, Sarah. The course is here whenever you're ready, and your first session with
-> your group is the only date that matters. When you've got twenty quiet minutes, session
+> your group is the only date that matters. When you've got a few quiet minutes, session
 > one is a good place to begin.
 > **[ Begin session one ]**
 

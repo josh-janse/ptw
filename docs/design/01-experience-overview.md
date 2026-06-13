@@ -26,7 +26,7 @@ the disposition of *"I don't need to have the answer. I'm a facilitator."*
   group?"* It invites reflection; the system does not store or echo it. (If anything
   remembers it, it's the leader, not the software. This is in keeping with a
   contemplative voice that *invites* rather than *extracts.*)
-- **One finishable next step:** watch **session 1** of leader training (~20 min). One
+- **One finishable next step:** watch **session 1** of leader training (~6 min). One
   small, completable thing produces outsized steadiness.
 
 ## What the leader is invited to do next

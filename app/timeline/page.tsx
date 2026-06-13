@@ -66,7 +66,7 @@ const ROWS: Row[] = [
     id: "begin",
     layer: "email",
     title: "A calm place to begin",
-    body: "One warm welcome and one small thing to do first: watch session one of the leader training, about twenty minutes, so the shape of what is ahead feels familiar.",
+    body: "One warm welcome and one small thing to do first: watch session one of the leader training, about six minutes, so the shape of what is ahead feels familiar.",
     artifact: { href: "/email/week1-begin", label: "Read the email" },
     conversation: "I'm not sure what I'm walking into. Can we talk it through?",
   },

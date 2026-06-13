@@ -3,7 +3,6 @@ import {
   Button,
   Container,
   Head,
-  Heading,
   Hr,
   Html,
   Img,
@@ -49,9 +48,6 @@ export function FirstStepEmail({
               src="/images/KenSet-2-email.jpg"
               width={520}
             />
-            <Heading className="m-0 font-normal text-2xl text-foreground leading-snug">
-              A calm place to begin
-            </Heading>
             <Text className="mt-6 text-base text-foreground leading-7">
               Hi {firstName},
             </Text>
@@ -61,10 +57,9 @@ export function FirstStepEmail({
               need to have it all figured out to begin well.
             </Text>
             <Text className="mt-4 text-base text-foreground leading-7">
-              There's just one thing worth doing first. Not inviting anyone yet,
-              not planning sessions. Just watching session one of the leader
-              training, about twenty minutes, so the shape of what's ahead feels
-              familiar.
+              There's one thing worth doing first. Not inviting anyone yet, not
+              planning sessions. Watching session one of the leader training,
+              about 6 minutes, helps the shape of what's ahead feel familiar.
             </Text>
             <Section className="mt-8">
               <Button

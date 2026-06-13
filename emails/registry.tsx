@@ -26,7 +26,7 @@ export const emailTemplates: EmailTemplate[] = [
       <FirstStepEmail
         conversationUrl="/conversation?q=I%27d%20like%20to%20talk%20through%20getting%20ready%20for%20my%20first%20session"
         firstName="Sarah"
-        sessionUrl="https://launch.practicingtheway.org/training"
+        sessionUrl="https://launch.practicingtheway.org/training/how-to-host-the-practicing-the-way-course?autoplay=1"
       />
     ),
   },
