@@ -33,7 +33,7 @@ export const thinkingSections: ThinkingSection[] = [
   {
     slug: "visual-design",
     title: "Visual Design",
-    blurb: "How calm looks: surfaces, type, and the invitation system.",
+    blurb: "What calm looks like: surfaces, type, and the invitation system.",
     keyThought: "An invitation, not a notification.",
     pause: {
       background:
@@ -44,7 +44,7 @@ export const thinkingSections: ThinkingSection[] = [
   {
     slug: "copy-content",
     title: "Copy + Content",
-    blurb: "How we speak: warm, plain, one ask at a time.",
+    blurb: "How it speaks: warm, plain, one ask at a time.",
     keyThought: "Calm, quiet confidence, even when not everything is known.",
     pause: {
       background:
@@ -55,7 +55,7 @@ export const thinkingSections: ThinkingSection[] = [
   {
     slug: "rationale",
     title: "Rationale",
-    blurb: "Why it is built this way, and how we would know it works.",
+    blurb: "Why it's built this way, and how we'd know it works.",
     keyThought: "Our best guess, made better by listening.",
     pause: {
       background:

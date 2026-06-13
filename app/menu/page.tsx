@@ -32,7 +32,7 @@ const menuItems: MenuItem[] = [
   ),
   {
     label: "The conversation",
-    description: "A live, action-titled conversation, never a chatbot.",
+    description: "A living, action-titled exchange, never a chatbot.",
     href: "/conversation",
     group: "prototype",
   },
@@ -107,7 +107,9 @@ export default function Menu() {
           Where would you like to begin?
         </h1>
         <p className="mt-4 max-w-prose text-lg text-muted-foreground leading-relaxed">
-          Move through in any order. There is no wrong way in.
+          I've sketched out my thinking across the four areas below, and built
+          an email and a conversation as example touchpoints so you can feel the
+          ideas. Move through in any order.
         </p>
       </header>
 
@@ -135,12 +137,12 @@ export default function Menu() {
         className="ptw-rise mt-auto flex flex-col gap-4 pt-20 text-sm"
         style={{ animationDelay: "460ms" }}
       >
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-1">
           <Link
             className="text-muted-foreground transition-colors hover:text-foreground"
             href="/brand"
           >
-            Branding
+            Brand Example
           </Link>
           <span aria-hidden="true" className="text-border">
             ·
@@ -153,13 +155,16 @@ export default function Menu() {
           </Link>
         </div>
         <p className="text-muted-foreground text-xs leading-relaxed">
-          Prepared by Joshua Janse van Rensburg in collaboration with Claude.
+          Prepared by Joshua Janse van Rensburg.
+          <br />
+          Compiled with Claude.
+          <br />
           <br />
           <Link
             className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground"
             href="/ai-approach"
           >
-            On the place of AI
+            The place of AI
           </Link>
         </p>
       </footer>
