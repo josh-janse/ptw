@@ -27,7 +27,7 @@ export function WelcomeEmail({ firstName, startUrl }: WelcomeEmailProps) {
       </Head>
       <Preview>Welcome to Practicing the Way</Preview>
       <Tailwind config={emailTheme}>
-        <Body className="m-0 bg-card px-4 font-sans">
+        <Body className="m-0 flex min-h-screen flex-col justify-center bg-card px-4 font-sans">
           <Container className="mx-auto my-10 max-w-[520px]">
             <Heading className="m-0 font-semibold text-2xl text-foreground">
               Welcome, {firstName}
