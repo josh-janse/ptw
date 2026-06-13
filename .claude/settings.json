@@ -4,7 +4,8 @@
       "Read(//tmp/**)",
       "Read(//private/tmp/**)",
       "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/lorito/**)",
-      "Read(//Users/joshuajansevanrensburg/.claude/plugins/cache/claude-plugins-official/vercel/0.43.0/skills/ai-sdk/references/**)"
+      "Read(//Users/joshuajansevanrensburg/.claude/plugins/cache/claude-plugins-official/vercel/0.43.0/skills/ai-sdk/references/**)",
+      "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/pex-app-ecosystem/apps/micro-apps/chat/app/components/**)"
     ]
   },
   "hooks": {
