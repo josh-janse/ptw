@@ -6,6 +6,7 @@ import {
   Heading,
   Hr,
   Html,
+  Img,
   Preview,
   Section,
   Tailwind,
@@ -29,6 +30,13 @@ export function WelcomeEmail({ firstName, startUrl }: WelcomeEmailProps) {
       <Tailwind config={emailTheme}>
         <Body className="m-0 flex min-h-screen flex-col justify-center bg-card px-4 font-sans">
           <Container className="mx-auto my-10 max-w-[520px]">
+            <Img
+              alt="Practicing the Way"
+              className="mb-8 w-full rounded-xl"
+              height={293}
+              src="/images/KenSet-2-email.jpg"
+              width={520}
+            />
             <Heading className="m-0 font-semibold text-2xl text-foreground">
               Welcome, {firstName}
             </Heading>

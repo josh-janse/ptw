@@ -40,20 +40,20 @@ export default async function EmailPreviewPage({ params }: { params: Params }) {
 
   return (
     <div className="flex h-screen flex-col bg-card">
-      <Button
-        asChild
-        className="absolute top-4 left-1.5 text-muted-foreground"
-        size="sm"
-        variant="ghost"
-      >
-        <Link href="/email">
-          <ArrowLeft />
-          Back
-        </Link>
-      </Button>
-      <span className="absolute top-5 right-4 text-muted-foreground text-xs">
-        {template.name}
-      </span>
+      <header className="relative flex items-center justify-center border-border border-b bg-card px-1.5 py-4">
+        <Button
+          asChild
+          className="absolute left-1.5 text-muted-foreground"
+          size="sm"
+          variant="ghost"
+        >
+          <Link href="/email">
+            <ArrowLeft />
+            Back
+          </Link>
+        </Button>
+        <span className="text-muted-foreground text-xs">{template.name}</span>
+      </header>
       <iframe
         className="w-full flex-1 border-0"
         srcDoc={html}
