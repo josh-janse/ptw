@@ -23,12 +23,11 @@ export default function Brainstorm() {
       <header className="ptw-rise mt-12" style={{ animationDelay: "0ms" }}>
         <p className="font-medium text-primary text-sm">Brainstorming</p>
         <h1 className="mt-3 font-normal text-3xl leading-tight sm:text-4xl">
-          The raw thinking, before it was curated
+          Raw thinking, before it was curated
         </h1>
         <p className="mt-4 max-w-prose text-lg text-muted-foreground leading-relaxed">
-          These are the original hand-drawn scans behind the designed sections.
-          Not a polished artifact, just the working notes, offered for anyone
-          curious about how the ideas first took shape.
+          These are some hand-drawn scans illustrating some of my thinking and
+          process.
         </p>
       </header>
 
@@ -58,19 +57,6 @@ export default function Brainstorm() {
           </li>
         ))}
       </ul>
-
-      <footer
-        className="ptw-rise mt-auto pt-20 text-muted-foreground text-sm"
-        style={{ animationDelay: "320ms" }}
-      >
-        <Link
-          className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          href="/menu"
-        >
-          <ArrowLeft className="size-4" />
-          Back to the menu
-        </Link>
-      </footer>
     </main>
   );
 }

@@ -15,26 +15,19 @@ export default function Home() {
         <AnimatedLogo className="w-[167px]" />
       </Link>
       <div className="w-full max-w-xl">
-        <p
-          className="ptw-rise font-medium text-primary text-sm"
-          style={{ animationDelay: "120ms" }}
-        >
-          A submission for Practicing the Way
-        </p>
         <h1
-          className="ptw-rise mt-4 font-normal text-4xl leading-tight sm:text-5xl"
+          className="ptw-rise mt-4 font-normal text-3xl leading-tight sm:text-4xl"
           style={{ animationDelay: "240ms" }}
         >
-          Hi Pathways team.
+          Hey Jed and team.
         </h1>
         <p
           className="ptw-rise mx-auto mt-5 max-w-prose text-lg text-muted-foreground leading-relaxed"
           style={{ animationDelay: "380ms" }}
         >
-          Thank you for the room to think about this with you. Rather than hand
-          you a document, I have built the thinking as something you can move
-          through, at the same unhurried pace the design hopes to give a new
-          leader.
+          Thank you for the opportunity to think through this exercise. Rather
+          than hand you a document, I have built the thinking as something you
+          can move through.
         </p>
         <div
           className="ptw-rise mt-9 flex justify-center"

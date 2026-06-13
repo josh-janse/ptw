@@ -148,13 +148,13 @@ export default function Brand() {
       <main className="mx-auto w-full max-w-7xl flex-auto px-5 py-8 sm:px-8">
         <header className="mb-8">
           <p className="font-medium text-muted-foreground text-sm">
-            Brand Showcase
+            Brand Example
           </p>
           <h1 className="mt-1 font-normal text-4xl leading-tight">
             Welcome to Practicing the Way
           </h1>
           <p className="mt-3 max-w-prose text-lg text-muted-foreground leading-relaxed">
-            A calm, contemplative system — Plus Jakarta Sans at regular weight,
+            A calm, contemplative system. Plus Jakarta Sans at regular weight,
             warm off-white surfaces, muted earthy accents, and a single salmon
             CTA color.
           </p>

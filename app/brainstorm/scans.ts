@@ -11,27 +11,23 @@ export interface Scan {
 export const scans: Scan[] = [
   {
     title: "The Need",
-    blurb: "Where it started: the problem worth solving, written by hand.",
+    blurb: "A rough mind map tracing questions and key system data points.",
     file: "The Need.pdf",
     slug: "the-need",
   },
   {
     title: "Copy & Content",
-    blurb: "Early voice and wording, before the language found its calm.",
+    blurb:
+      "Unpacking system triggers and what I felt might be important for content direction.",
     file: "Copy & Content.pdf",
     slug: "copy-and-content",
   },
   {
     title: "Visual & Timeline",
-    blurb: "Loose sketches of look and pacing, on the way to the prototypes.",
+    blurb:
+      "Inital (incomplete) loose sketches and thoughts of what the experience and timeline could be.",
     file: "Visual & Timeline.pdf",
     slug: "visual-and-timeline",
-  },
-  {
-    title: "Key Areas",
-    blurb: "The shape of the work, broken into the parts that mattered most.",
-    file: "Key Areas.pdf",
-    slug: "key-areas",
   },
 ];
 
