@@ -49,6 +49,12 @@ const menuItems: MenuItem[] = [
     href: "/timeline",
     group: "prototype",
   },
+  {
+    label: "The in-app surfaces",
+    description: "One principle, three intensities. Invitation, never alarm.",
+    href: "/in-app",
+    group: "prototype",
+  },
 ];
 
 const groups = [
@@ -56,27 +62,25 @@ const groups = [
     id: "thinking" as const,
     eyebrow: "The thinking",
     heading: "Four layers to move through",
-    note: "Each opens with a short pause.",
   },
   {
     id: "prototype" as const,
     eyebrow: "The prototypes",
-    heading: "Three pieces to experience",
-    note: "The designed artifacts, made real.",
+    heading: "Four pieces to experience",
   },
 ];
 
 const itemClassName =
-  "group flex items-baseline justify-between gap-4 border-border border-b py-5 transition-colors hover:border-primary/40";
+  "group flex items-baseline justify-between gap-4 rounded-xl border border-border bg-card px-5 py-4 transition-colors hover:border-primary/40 hover:bg-accent";
 
 function MenuItemBody({ item }: { item: MenuItem }) {
   return (
     <span className="min-w-0">
-      <span className="flex items-center gap-2 font-normal text-foreground text-xl leading-snug">
+      <span className="flex items-center gap-2 font-medium text-foreground text-lg leading-snug">
         {item.label}
-        <ArrowUpRight className="size-4 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:text-primary group-hover:opacity-100" />
+        <ArrowUpRight className="size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
       </span>
-      <span className="mt-1 block text-base text-muted-foreground leading-relaxed">
+      <span className="mt-1 block text-muted-foreground text-sm leading-relaxed">
         {item.description}
       </span>
     </span>
@@ -85,7 +89,7 @@ function MenuItemBody({ item }: { item: MenuItem }) {
 
 function MenuList({ items }: { items: MenuItem[] }) {
   return (
-    <ul className="mt-5 flex flex-col">
+    <ul className="mt-5 flex flex-col gap-3">
       {items.map((item) => (
         <li key={item.href}>
           {item.fadeTo ? (
@@ -133,7 +137,6 @@ export default function Menu() {
             <h2 className="mt-1 font-normal text-2xl text-foreground leading-snug">
               {group.heading}
             </h2>
-            <p className="mt-1 text-muted-foreground text-sm">{group.note}</p>
             <MenuList
               items={menuItems.filter((item) => item.group === group.id)}
             />
