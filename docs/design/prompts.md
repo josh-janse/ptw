@@ -17,9 +17,9 @@ in `app/globals.css`. NEVER use em dashes (see `CLAUDE.md`). Finish with
 | Shell: home, menu, pause, thinking MDX | B (kicked off) | done |
 | `/chat` to `/conversation` + tuning | 1 below | done |
 | `/brainstorm` reveal page | 2 below | done |
-| Email tuning + Week 1 email | 3 below | todo |
-| `/timeline` | 4 below | todo |
-| `/in-app` invitation system | 5 below | todo |
+| Scope-down: 2 surfaces + 1 email + det.-layer thinking | 3 (revised) | todo |
+| `/timeline` surface | dropped | descoped |
+| `/in-app` surface | dropped | descoped |
 | AI-approach page + colophon | 6 below | done |
 | Full copy review (run last) | 7 below | todo |
 
@@ -61,51 +61,34 @@ Done when: /brainstorm lists all four scans and each opens; ultracite check pass
 
 ---
 
-## Prompt 3: email tuning + the Week 1 first-step email
+## Prompt 3 (revised): scope down to two surfaces + one email + deterministic-layer thinking
+
+Final deliverable, by deliberate scope tradeoff (time, and the brief rewards thinking
+over a complete product): the four thinking layers + TWO surfaces, the conversation and
+ONE example email. The /email index, /timeline, and /in-app surfaces and the extra email
+templates become irrelevant. Do NOT delete them; just make them unreachable.
 
 ```
-Read docs/design/02 and 03. Tune the email layer toward "a letter, not a campaign," and add the Week 1 first-step email that couples to the conversation.
-
-Existing: emails/welcome-email.tsx, emails/reflection-prompt.tsx, emails/registry.tsx, emails/theme.ts; preview at /email and /email/[id].
+Read docs/design/01, 02, 03. Scope the app down to the four thinking layers plus two surfaces: the conversation and ONE example email. Own app/menu/page.tsx, emails/*, and content/thinking/experience-overview.mdx.
 
 Tasks:
-1. Add a "first-step" (Week 1) email matching canonical example ① in docs/design/03: a warm letter, one salmon primary button ("Begin session one"), and beneath it ONE quiet secondary text link that deep-links into /conversation?q=... (the leader's pre-seeded message, e.g. "I'd like to talk through getting ready for my first session"). Register it in emails/registry.tsx with representative demo data.
-2. Tune existing templates to the letter aesthetic: single ~600px column, warm off-white, regular weight, lots of whitespace, warmly signed, restraint over decoration. Keep emailTheme tokens in sync with globals.css.
-3. Keep reflection-prompt aligned with the post-launch confidence-reflection moment.
+1. The one email = the FIRST touchpoint. Add a single first-step (Week 1) email matching canonical example ① in docs/design/03. It must illustrate three things: the comms voice (a calm letter, not a campaign); the system's best-guess next step (watch session one, confidence before inviting anyone); and an EXPLICIT link into the non-deterministic layer, one quiet secondary text link that deep-links to /conversation?q=... with the leader's pre-seeded message (e.g. "I'd like to talk through getting ready for my first session"). One salmon primary button ("Begin session one") plus that one secondary. Register it in emails/registry.tsx. This is the only email that needs to be good; it may sit alongside a small note of its name.
+2. Menu (app/menu/page.tsx): surface ONLY the four thinking layers + Conversation + this one email. Remove the /email (index), /timeline, and /in-app entries. Point the email entry directly at /email/<the-id>, not the index. Keep the footer links (Branding, Brainstorming) and the AI-approach colophon.
+3. De-link the rest: ensure nothing reachable points to /email (index), /timeline, /in-app, or the other templates. They can stay on disk but must be unreachable from the live flow. Grep app/ and content/ for "/timeline", "/in-app", and bare "/email" links and remove or repoint any that remain in reachable pages.
+4. Deterministic-layer thinking: in content/thinking/experience-overview.mdx, add a CONCISE section that directly answers the brief's question, "how the experience prepares them over the next three weeks." Describe the deterministic drip and the 3-week arc (structure -> role -> disposition -> readiness) in words, framed as: the one email is the deterministic layer's first touchpoint; the conversation is the non-deterministic layer. Keep it tight. This replaces building an interactive /timeline.
 
-Constraints: confidence before invitation (the Week 1 email does NOT ask them to invite members). One primary ask plus one quiet secondary. No em dashes. Name the conversation by action in the secondary link, never "chat with our AI."
-Done when: the new email previews at /email/<id>, the secondary CTA points at /conversation?q=..., ultracite check passes.
+Constraints: confidence before invitation. Name the conversation by action, never "AI/chat". No em dashes. Calm, no urgency.
+Done when: /menu shows exactly the four layers + conversation + one email; the email previews and its secondary CTA opens /conversation?q=...; experience-overview answers the 3-week question concisely; no reachable links point to /timeline, /in-app, or the /email index; ultracite check and npm run build pass.
 ```
 
 ---
 
-## Prompt 4: /timeline
+## Prompts 4 and 5: /timeline and /in-app surfaces, DROPPED (descoped)
 
-```
-Read docs/design/01 (the 3-week arc and the two layers) and 00-delivery.md. Build /timeline: the deterministic layer made visible.
-
-Show the touchpoints from signup to the group's first session across ~3 weeks, as a calm horizontal or vertical timeline. NO countdown and no pressure: it shows where touchpoints land, not time pressure. Mark the arc structure -> role -> disposition -> readiness (Week 1 to 3). Show which touchpoints are email (the heartbeat) vs in-app (the workspace), and note the adaptive leader-training drip (watch one, gently nudge the next; meet an unengaged leader kindly, no blast). Where useful, link a touchpoint to its artifact (/email/<id>, /conversation).
-
-Aesthetic: warm, unhurried, regular weight, salmon accent, invitation-not-notification. Quiet back-to-menu link.
-Done when: /timeline renders the touchpoints and arc with no countdown; ultracite check passes. Static demo data is fine (one fictional leader, start ~3 weeks out).
-```
-
----
-
-## Prompt 5: /in-app invitation system
-
-```
-Read docs/design/02 (the invitation system: one principle, three surfaces) and 01 (the confidence slider). Build /in-app: a small showcase of the in-app invitation surfaces.
-
-Show the three surfaces governed by one principle (invitation, not notification: singular, placed, calm, no badges/alarms):
-1. Inline invitation card (the everyday "next right step" / trailhead marker).
-2. Centered arrival moment (a threshold pause; you may reuse components/pause.tsx patterns).
-3. Corner invitation (an ambient, low-stakes nudge).
-Plus the confidence slider: a post-launch reflection ("How are you feeling about leading, now that you've begun?"), one warm slider, one gentle affirmation in response, NO number shown back to the leader.
-
-Aesthetic: tokens from globals.css, calm fade/rise motion, generous whitespace.
-Done when: /in-app demonstrates the three surfaces and the slider; ultracite check passes.
-```
+Not built as interactive surfaces. The timeline / deterministic layer is described
+concisely in the Experience Overview thinking page (Prompt 3, task 4); the in-app
+invitation system is described in the Visual Design thinking page. The /timeline and
+/in-app page files may stay on disk but must be unreachable (Prompt 3, task 3).
 
 ---
 
