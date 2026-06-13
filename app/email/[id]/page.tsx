@@ -39,7 +39,7 @@ export default async function EmailPreviewPage({ params }: { params: Params }) {
   const html = await render(template.render());
 
   return (
-    <div className="flex h-screen flex-col bg-background">
+    <div className="flex h-screen flex-col bg-card">
       <Button
         asChild
         className="absolute top-4 left-1.5 text-muted-foreground"
@@ -51,16 +51,6 @@ export default async function EmailPreviewPage({ params }: { params: Params }) {
           Back
         </Link>
       </Button>
-      <header className="border-border border-b px-4">
-        <div className="mx-auto w-full max-w-[520px] pt-16 pb-4">
-          <h1 className="font-semibold text-foreground text-xl tracking-tight">
-            {template.name}
-          </h1>
-          <p className="mt-1 text-muted-foreground text-sm">
-            Subject: <span className="text-foreground">{template.subject}</span>
-          </p>
-        </div>
-      </header>
       <iframe
         className="w-full flex-1 border-0"
         srcDoc={html}

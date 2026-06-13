@@ -31,8 +31,8 @@ export function ReflectionPrompt({
       </Head>
       <Preview>Your {practice} reflection for this week</Preview>
       <Tailwind config={emailTheme}>
-        <Body className="m-0 bg-background px-4 font-sans">
-          <Container className="mx-auto my-10 max-w-[520px] rounded-xl bg-card p-10">
+        <Body className="m-0 bg-card px-4 font-sans">
+          <Container className="mx-auto my-10 max-w-[520px]">
             <Text className="m-0 font-medium text-muted-foreground text-sm uppercase tracking-wide">
               {practice}
             </Text>
