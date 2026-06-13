@@ -51,6 +51,9 @@ export default async function EmailPreviewPage({ params }: { params: Params }) {
           Back
         </Link>
       </Button>
+      <span className="absolute top-5 right-4 text-muted-foreground text-xs">
+        {template.name}
+      </span>
       <iframe
         className="w-full flex-1 border-0"
         srcDoc={html}
