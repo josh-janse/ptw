@@ -57,6 +57,10 @@ export function FirstStepEmail({
               need to have it all figured out to begin well.
             </Text>
             <Text className="mt-4 text-base text-foreground leading-7">
+              We'll take the next few weeks a step at a time, sending a note now
+              and then to point you to one small, helpful thing.
+            </Text>
+            <Text className="mt-4 text-base text-foreground leading-7">
               There's one thing worth doing first. Not inviting anyone yet, not
               planning sessions. Watching session one of the leader training,
               about 6 minutes, helps the shape of what's ahead feel familiar.
@@ -77,9 +81,9 @@ export function FirstStepEmail({
             </Text>
             <Hr className="my-8 border-border" />
             <Text className="m-0 text-foreground text-sm leading-6">
-              Peace to you as you start,
+              Peace,
               <br />
-              The Practicing the Way team
+              Practicing the Way
             </Text>
           </Container>
         </Body>
