@@ -26,7 +26,7 @@ export default function Home() {
           style={{ animationDelay: "380ms" }}
         >
           Thank you for the opportunity to think through this exercise. Rather
-          than hand you a document, I have built the thinking as something you
+          than send you a document, I have built the thinking as something you
           can move through.
         </p>
         <div

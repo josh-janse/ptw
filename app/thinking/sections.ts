@@ -56,7 +56,7 @@ export const thinkingSections: ThinkingSection[] = [
     slug: "rationale",
     title: "Rationale",
     blurb: "Why it's built this way, and how we'd know it works.",
-    keyThought: "Our best guess, made better by listening.",
+    keyThought: "A best guess, made better by listening.",
     pause: {
       background:
         "radial-gradient(120% 120% at 50% 5%, #4a352c 0%, #36261f 55%, #241915 100%)",
