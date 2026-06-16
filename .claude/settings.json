@@ -5,7 +5,19 @@
       "Read(//private/tmp/**)",
       "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/lorito/**)",
       "Read(//Users/joshuajansevanrensburg/.claude/plugins/cache/claude-plugins-official/vercel/0.43.0/skills/ai-sdk/references/**)",
-      "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/pex-app-ecosystem/apps/micro-apps/chat/app/components/**)"
+      "Read(//Users/joshuajansevanrensburg/Desktop/4. Code/pex-app-ecosystem/apps/micro-apps/chat/app/components/**)",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__wait_for",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__press_key",
+      "Read(//var/folders/jt/0w08m3tn4lngmv_1tqr3h52w0000gn/T/chrome-devtools-mcp-xzDP8F/**)",
+      "Read(//private/var/folders/jt/0w08m3tn4lngmv_1tqr3h52w0000gn/T/chrome-devtools-mcp-xzDP8F/**)",
+      "mcp__chrome-devtools__list_network_requests"
     ]
   },
   "hooks": {
